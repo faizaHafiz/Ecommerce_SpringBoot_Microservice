@@ -36,8 +36,9 @@ public class ProductController {
         // return "here is the product id: " + id;
     }
 
-    public void updateProductById(){
-
+    @PutMapping("{id}")
+    public GenericProductDto updateProductById(@PathVariable("id") Long id) throws NotFoundException{
+        return productService.UpdateProductById(id);
     }
 
     @PostMapping()
